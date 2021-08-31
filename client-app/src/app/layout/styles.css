@@ -1,0 +1,16 @@
+body {
+  background-color: #F4F5FF !important;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  box-shadow: 0 1px 4 px 0 rgba(34,36,38,.15)
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+
+

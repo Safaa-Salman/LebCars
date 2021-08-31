@@ -1,0 +1,23 @@
+.ui.grid.container {
+  width: 100% !important;
+}
+#homeButton {
+  color: #c11c08;
+  background-color: #ffffff;
+  border: 2px solid #c11c08;
+  border-radius: 20px;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+#homeButton:hover {
+  background-color: #c11c08;
+  color: white;
+}
+.ui.segment {
+  position: relative;
+  background: #fff;
+  box-shadow: none;
+  margin: 1rem 0;
+  padding: 1em 1em;
+  border: none;
+}

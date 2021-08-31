@@ -1,0 +1,25 @@
+.ui.secondary.pointing.menu {
+    background-image: linear-gradient(135deg, #008080 11%, #00b5ad 31%, #008080 100%) !important;
+}
+.ui.secondary.pointing.menu .active.item, .ui.menu .active.item {
+  border-color: #ffffff;
+  box-shadow: 3px 3px 6px rgba(34,36,38,.15);
+  font-weight: 800;
+  color: #ffffff;
+}
+.ui.link.menu .item:hover, .ui.menu .dropdown.item:hover,
+ .ui.menu .link.item:hover, .ui.menu a.item:hover {
+  border-color: #ffffff !important;
+  box-shadow: 3px 3px 6px rgba(34,36,38,.15);
+  font-weight: 800;
+  color: #ffffff !important;
+}
+.ui.menu .item {
+  color: #ffffff;
+  font-size: 16px !important;
+  /* margin-right: 2em !important; */
+}
+
+.ui.vertical.menu {
+  background: #00b5ad;
+}
