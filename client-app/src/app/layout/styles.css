@@ -1,5 +1,10 @@
-body {
+/* body {
   background-color: #F4F5FF !important;
+} */
+body {
+  background-color: #ffffff !important;
+  color: #2b2d2f;
+  /* background-image: url("/assets/background_half.png") */
 }
 
 .react-calendar {
@@ -12,5 +17,13 @@ body {
   width: 100%;
 }
 
+/* .ui.header {
+  color: #2b2d2f;
+} */
+
+.ui.statistic>.value, .ui.statistics .statistic>.value, 
+.ui.statistic>.label, .ui.statistics .statistic>.label {
+  color: #c11c08;
+}
 
 

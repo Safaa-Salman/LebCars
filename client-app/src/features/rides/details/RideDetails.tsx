@@ -12,12 +12,13 @@ import RideDetailedSidebar from './RideDetailedSidebar';
 export default observer(function RideDetails() {
 
     const { rideStore } = useStore();
-    const { selectedRide: ride, loadRide, loadingInitial } = rideStore;
+    const { selectedRide: ride, loadRide, loadingInitial, clearSelectedRide } = rideStore;
     const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         if (id) loadRide(id);
-    }, [id, loadRide]);
+        return () => clearSelectedRide();
+    }, [id, loadRide, clearSelectedRide]);
 
     if (loadingInitial || !ride) return <LoadingComponent />;
 
@@ -26,7 +27,7 @@ export default observer(function RideDetails() {
             <Grid.Column width={10}>
                 <RideDetailedHeader ride={ride} />
                 <RideDetailedInfo ride={ride} />
-                <RideDetailedChat />
+                <RideDetailedChat rideId={ride.id} />
             </Grid.Column>
             <Grid.Column width={6}>
                 <RideDetailedSidebar ride={ride}/>

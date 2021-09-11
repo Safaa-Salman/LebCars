@@ -1,39 +1,61 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Core;
+using Application.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Persistence;
 
 namespace Application.Rides
 {
     public class List
     {
-        public class Query : IRequest<Result<List<RideDto>>> { }
+        public class Query : IRequest<Result<PagedList<RideDto>>>
+        {
+            public RideParams Params { get; set; }
+            // public PagingParams Params { get; set; }
+        }
 
-        public class Handler : IRequestHandler<Query, Result<List<RideDto>>>
+        public class Handler : IRequestHandler<Query, Result<PagedList<RideDto>>>
         {
             private readonly DataContext _context;
-            private readonly ILogger<List> _logger;
             private readonly IMapper _mapper;
-            public Handler(DataContext context, IMapper mapper)
+            private readonly IUserAccessor _userAccessor;
+            public Handler(DataContext context, IMapper mapper, IUserAccessor userAccessor)
             {
+                _userAccessor = userAccessor;
                 _mapper = mapper;
                 _context = context;
             }
 
-            public async Task<Result<List<RideDto>>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<PagedList<RideDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var rides = await _context.Rides
-                    .ProjectTo<RideDto>(_mapper.ConfigurationProvider)
-                    .ToListAsync(cancellationToken);
+                var query = _context.Rides
+                    .Where(d => d.departureDate >= request.Params.StartDate | d.returnDate >= request.Params.StartDate)
+                    .OrderBy(d => d.departureDate)
+                    .ProjectTo<RideDto>(_mapper.ConfigurationProvider,
+                        new { currentUsername = _userAccessor.GetUsername() })
+                    .AsQueryable();
 
-                return Result<List<RideDto>>.Success(rides);
+                if (request.Params.IsGoing && !request.Params.IsDriver)
+                {
+                    query = query.Where(x => x.Attendees.Any(a => a.Username == _userAccessor.GetUsername()));
+                }
+
+                if (request.Params.IsDriver && !request.Params.IsGoing)
+                {
+                    query = query.Where(x => x.DriverUsername == _userAccessor.GetUsername());
+                }
+
+                return Result<PagedList<RideDto>>.Success(
+                    await PagedList<RideDto>.CreateAsync(query, request.Params.PageNumber,
+                        request.Params.PageSize)
+                );
+                
             }
         }
     }

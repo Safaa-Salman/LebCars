@@ -4,7 +4,8 @@ import { toast } from 'react-toastify';
 import { history } from '../..';
 import { store } from '../stores/store';
 import { User, UserFormValues } from '../models/user';
-import { Photo, Profile } from '../models/profile';
+import { Photo, Profile, UserRide } from '../models/profile';
+import { PaginatedResult } from '../models/pagination';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -22,6 +23,11 @@ axios.interceptors.request.use(config => {
 
 axios.interceptors.response.use(async response => {
     await sleep(1000);
+    const pagination = response.headers['pagination'];
+    if (pagination) {
+        response.data = new PaginatedResult(response.data, JSON.parse(pagination));
+        return response as AxiosResponse<PaginatedResult<any>>
+    }
     return response;
 }, (error: AxiosError) => {
     const { data, status, config } = error.response!;
@@ -67,7 +73,8 @@ const requests = {
 }
 
 const Rides = {
-    list: () => requests.get<Ride[]>('/rides'),
+    list: (params: URLSearchParams) => axios.get<PaginatedResult<Ride[]>>('/rides', { params })
+        .then(responseBody),
     details: (id: string) => requests.get<Ride>(`rides/${id}`),
     create: (ride: RideFormValues) => requests.post<void>('/rides', ride),
     update: (ride: RideFormValues) => requests.put<void>(`/rides/${ride.id}`, ride),
@@ -91,7 +98,13 @@ const Profiles ={
         })
     },
     setMainPhoto: (id: string) => requests.post(`/photos/${id}/setMain`, {}),
-    deletePhoto: (id: string) => requests.del(`/photos/${id}`)
+    deletePhoto: (id: string) => requests.del(`/photos/${id}`),
+    updateProfile: (profile: Partial<Profile>) => requests.put(`/profiles`,profile),
+    updateFollowing: (username: string) => requests.post(`/follow/${username}`, {}),
+    listFollowings: (username: string, predicate: string) =>
+        requests.get<Profile[]>(`/follow/${username}?predicate=${predicate}`),
+    listRides: (username: string, predicate: string) =>
+        requests.get<UserRide[]>(`/profiles/${username}/rides?predicate=${predicate}`)
     
 }
 

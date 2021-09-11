@@ -18,6 +18,7 @@ namespace Domain
         public bool Smoking { get; set; }
         public bool IsCancelled { get; set; }
         public ICollection<RideAttendee> Attendees {get; set;} = new List<RideAttendee>();
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
         
     }
 }

@@ -12,12 +12,12 @@ import MyTextArea from '../../../app/common/form/MyTextArea';
 import { prefrenceOptions } from '../../../app/common/options/prefrenceOptions';
 import MySelectInput from '../../../app/common/form/MySelectInput';
 import MyDateInput from '../../../app/common/form/MyDateInput';
-import { Ride, RideFormValues } from '../../../app/models/ride';
+import { RideFormValues } from '../../../app/models/ride';
 
 export default observer(function RideForm() {
     const history = useHistory();
     const { rideStore } = useStore();
-    const { createRide, updateRide, loading, loadRide, loadingInitial } = rideStore;
+    const { createRide, updateRide, loadRide, loadingInitial } = rideStore;
     const { id } = useParams<{ id: string }>();
 
     const [ride, setRide] = useState<RideFormValues>(new RideFormValues());

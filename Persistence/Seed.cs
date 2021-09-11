@@ -45,13 +45,13 @@ namespace Persistence
                 {
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
-                        departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
+                        Departure = "Kobeih, Mount Lebanon",
+                        Destination = "Aley, Mount Lebanon",
+                        departureDate = DateTime.Now.AddMonths(1),
+                        returnDate = DateTime.Now.AddMonths(1),
                         passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
+                        Cost = "4000",
+                        Description = "Going to Aley for about 3 hours",
                         Children = true,
                         Animals = false,
                         Smoking = false,
@@ -66,16 +66,16 @@ namespace Persistence
                     },
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
-                        departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
+                        Departure = "Tripoli, North Lebanon",
+                        Destination = "Saida, South Lebanon",
+                        departureDate = DateTime.Now.AddMonths(2),
+                        returnDate = DateTime.Now.AddMonths(3),
                         passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
+                        Cost = "70000",
+                        Description = "Going for Vaccation, returning after a month",
                         Children = true,
                         Animals = false,
-                        Smoking = false,
+                        Smoking = true,
                         Attendees = new List<RideAttendee>
                         {
                             new RideAttendee
@@ -92,13 +92,13 @@ namespace Persistence
                     },
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
+                        Departure = "Aley, Mount Lebanon",
+                        Destination = "Beirut, Beirut",
                         departureDate = DateTime.Now.AddMonths(-1),
                         returnDate = DateTime.Now.AddMonths(-1),
                         passengerNumber = "4",
                         Cost = "20000",
-                        Description = "Activity 1 month ago",
+                        Description = "Going to Beirut for about 5 hours",
                         Children = true,
                         Animals = false,
                         Smoking = false,
@@ -118,40 +118,14 @@ namespace Persistence
                     },
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
+                        Departure = "Jeita Grotto, North Lebanon",
+                        Destination = "Tyre , North Lebanon",
                         departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
-                        Children = true,
-                        Animals = false,
-                        Smoking = false,
-                        Attendees = new List<RideAttendee>
-                        {
-                            new RideAttendee
-                            {
-                                AppUser = users[0],
-                                IsDriver = true
-                            },
-                            new RideAttendee
-                            {
-                                AppUser = users[2],
-                                IsDriver = false
-                            },
-                        }
-                    },
-                    new Ride
-                    {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
-                        departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
-                        Children = true,
+                        returnDate = DateTime.Now.AddMonths(2),
+                        passengerNumber = "3",
+                        Cost = "55000",
+                        Description = "Going to Tyre for about 3 months",
+                        Children = false,
                         Animals = false,
                         Smoking = false,
                         Attendees = new List<RideAttendee>
@@ -170,13 +144,117 @@ namespace Persistence
                     },
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
+                        Departure = "Aanjar , Bekaa Valley",
+                        Destination = "Beit ed-Dine ,Chouf District in the Mount Lebanon",
+                        departureDate = DateTime.Now.AddMonths(1),
+                        returnDate = DateTime.Now.AddMonths(1),
+                        passengerNumber = "2",
+                        Cost = "66000",
+                        Description = "Going to Beit- ed-Dine for  5 days",
+                        Children = false,
+                        Animals = true,
+                        Smoking = false,
+                        Attendees = new List<RideAttendee>
+                        {
+                            new RideAttendee
+                            {
+                                AppUser = users[2],
+                                IsDriver = true
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[1],
+                                IsDriver = false
+                            },
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Aabey ,Mount Lebanon",
+                        Destination = "Aramoun ,Mount Lebanon",
+                        departureDate = DateTime.Now.AddMonths(2),
+                        returnDate = DateTime.Now.AddMonths(3),
+                        passengerNumber = "1",
+                        Cost = "8000",
+                        Description = "Ride 1 month ago",
+                        Children = true,
+                        Animals = false,
+                        Smoking = true,
+                        Attendees = new List<RideAttendee>
+                        {
+                            new RideAttendee
+                            {
+                                AppUser = users[2],
+                                IsDriver = true
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[0],
+                                IsDriver = false
+                            },
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Aalay,Mount Lebanon",
+                        Destination = "Aramoun ,Mount Lebanon",
+                        departureDate = DateTime.Now.AddMonths(-1),
+                        returnDate = DateTime.Now.AddMonths(2),
+                        passengerNumber = "5",
+                        Cost = "10000",
+                        Description = "Going to Aramoun for 3 months",
+                        Children = false,
+                        Animals = false,
+                        Smoking = true,
+                        Attendees = new List<RideAttendee>
+                        {
+                            new RideAttendee
+                            {
+                                AppUser = users[0],
+                                IsDriver = true
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[2],
+                                IsDriver = false
+                            },
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Aalay ,Mount Lebanon",
+                        Destination = "bnachii lake,North Lebanon",
                         departureDate = DateTime.Now.AddMonths(-1),
                         returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
+                        passengerNumber = "3",
+                        Cost = "88000",
+                        Description = "Going to bnachii lake for about  5 hours",
+                        Children = false,
+                        Animals = true,
+                        Smoking = true,
+                        Attendees = new List<RideAttendee>
+                        {
+                            new RideAttendee
+                            {
+                                AppUser = users[1],
+                                IsDriver = true                            
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[0],
+                                IsDriver = false                            
+                            },
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Horsh Ehden,North Lebanon",
+                        Destination = "Btater, Mount Lebanon",
+                        departureDate = DateTime.Now.AddMonths(-1),
+                        returnDate = DateTime.Now.AddMonths(-1),
+                        passengerNumber = "2",
+                        Cost = "110000",
+                        Description = "Going to Btater for about 1 week",
                         Children = true,
                         Animals = false,
                         Smoking = false,
@@ -191,67 +269,15 @@ namespace Persistence
                     },
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
+                        Departure = "Harissa, North Lebanon",
+                        Destination = "Jounieh , North Lebanon",
                         departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
+                        returnDate = DateTime.Now.AddMonths(1),
+                        passengerNumber = "2",
+                        Cost = "30000",
+                        Description = "Going to Jounieh for about 2 months",
                         Children = true,
-                        Animals = false,
-                        Smoking = false,
-                        Attendees = new List<RideAttendee>
-                        {
-                            new RideAttendee
-                            {
-                                AppUser = users[0],
-                                IsDriver = true                            
-                            },
-                            new RideAttendee
-                            {
-                                AppUser = users[1],
-                                IsDriver = false                            
-                            },
-                        }
-                    },
-                    new Ride
-                    {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
-                        departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
-                        Children = true,
-                        Animals = false,
-                        Smoking = false,
-                        Attendees = new List<RideAttendee>
-                        {
-                            new RideAttendee
-                            {
-                                AppUser = users[2],
-                                IsDriver = true                            
-                            },
-                            new RideAttendee
-                            {
-                                AppUser = users[1],
-                                IsDriver = false                            
-                            },
-                        }
-                    },
-                    new Ride
-                    {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
-                        departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
-                        Children = true,
-                        Animals = false,
+                        Animals = true,
                         Smoking = false,
                         Attendees = new List<RideAttendee>
                         {
@@ -269,16 +295,95 @@ namespace Persistence
                     },
                     new Ride
                     {
-                        Departure = "Ride 1 month ago",
-                        Destination = "Ride 1 month ago",
+                        Departure = "Baalbek, North Lebanon",
+                        Destination = "Tyre , North Lebanon",
                         departureDate = DateTime.Now.AddMonths(-1),
-                        returnDate = DateTime.Now.AddMonths(-1),
-                        passengerNumber = "4",
-                        Cost = "20000",
-                        Description = "Activity 1 month ago",
+                        returnDate = DateTime.Now.AddMonths(2),
+                        passengerNumber = "6",
+                        Cost = "35000",
+                        Description = "Going to Tyre for about 3 months",
+                        Children = false,
+                        Animals = false,
+                        Smoking = true,
+                        Attendees = new List<RideAttendee>
+                        {
+                             new RideAttendee
+                            {
+                                AppUser = users[2],
+                                IsDriver = true                            
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[1],
+                                IsDriver = false                            
+                            },
+                            
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Aley ,Mount Lebanon",
+                        Destination = "Kadisha Valley,North Lebanon",
+                        departureDate = DateTime.Now.AddMonths(3),
+                        returnDate = DateTime.Now.AddMonths(3),
+                        passengerNumber = "7",
+                        Cost = "120000",
+                        Description = "Going to Kadisha Valley for about 1 day",
                         Children = true,
                         Animals = false,
+                        Smoking = true,
+                        Attendees = new List<RideAttendee>
+                        {
+                            new RideAttendee
+                            {
+                                AppUser = users[2],
+                                IsDriver = true                            
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[1],
+                                IsDriver = false                            
+                            },
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Baalbek, North Lebanon",
+                        Destination = "Rocca Marina ,Chekka  Lebanon",
+                        departureDate = DateTime.Now.AddMonths(4),
+                        returnDate = DateTime.Now.AddMonths(6),
+                        passengerNumber = "3",
+                        Cost = "160000",
+                        Description = "Going to Rocca Marina  for about 40 days",
+                        Children = false,
+                        Animals = true,
                         Smoking = false,
+                        Attendees = new List<RideAttendee>
+                        {
+                            new RideAttendee
+                            {
+                                AppUser = users[0],
+                                IsDriver = true                            
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[2],
+                                IsDriver = false                            
+                            },
+                        }
+                    },
+                    new Ride
+                    {
+                        Departure = "Bhamdoun,Mount Lebanon",
+                        Destination = "Byblos Castle,Mount Lebanon",
+                        departureDate = DateTime.Now.AddMonths(-1),
+                        returnDate = DateTime.Now.AddMonths(3),
+                        passengerNumber = "5",
+                        Cost = "85000",
+                        Description = "Going to Byblos for about 4 months",
+                        Children = true,
+                        Animals = true,
+                        Smoking = true,
                         Attendees = new List<RideAttendee>
                         {
                             new RideAttendee

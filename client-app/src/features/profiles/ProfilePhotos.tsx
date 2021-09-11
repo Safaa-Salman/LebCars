@@ -36,6 +36,7 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                     <Header floated='left' icon='image' content='Photos' />
                     {isCurrentUser && (
                         <Button
+                            id='homeButton'
                             content={addPhotoMode ? 'Cancel' : 'Add Photo'}
                             onClick={() => setAddPhotoMode(!addPhotoMode)}
                         />

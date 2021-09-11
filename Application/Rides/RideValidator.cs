@@ -12,6 +12,7 @@ namespace Application.Rides
             RuleFor(x => x.departureDate).NotEmpty();
             RuleFor(x => x.returnDate).NotEmpty();
             RuleFor(x => x.passengerNumber).NotEmpty();
+            RuleFor(x => x.Description).NotEmpty();
             RuleFor(x => x.Cost).NotEmpty();
             RuleFor(x => x.Children).NotEmpty();
             RuleFor(x => x.Animals).NotEmpty();

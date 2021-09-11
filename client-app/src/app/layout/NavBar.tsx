@@ -11,7 +11,7 @@ export default observer(function NavBar() {
         <div className='ui secondary pointing menu fixed'>
                 <Container>
                     <Menu.Item as={NavLink} exact to='/' header>
-                        <img src="/assets/logo_light.png" alt="logo" className='ui tiny image' />
+                        <img src="/assets/logo_small.png" alt="logo" className='ui small image' />
                     </Menu.Item>
 
                     <Menu.Item as={NavLink} to='/rides' name='Rides' />
@@ -28,7 +28,8 @@ export default observer(function NavBar() {
                     </Menu.Item>
 
                     <Menu.Item >
-                        <Button className='ui inverted button' as={NavLink} to='/createRide' content='Create Ride' />
+                        {/* <Button className='ui inverted button' as={NavLink} to='/createRide' content='Create Ride' /> */}
+                        <Button id="homeButton" as={NavLink} to='/createRide' content='Create Ride' />
                     </Menu.Item>
                 </Container>
         </div>
