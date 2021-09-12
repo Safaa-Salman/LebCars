@@ -29,11 +29,12 @@ export default observer(function HomePage() {
                     ) : (
                         <>
                             <img className='ui medium image' src='/assets/logo.png' alt='logo' style={{ marginTop: "10em" }} />
-                            <button className="ui button medium" id="homeButton" onClick={() => modalStore.openModal(<LoginForm />)} style={{paddingLeft:"2.2em", paddingRight:"2.2em"}}>
-
+                            <button className="ui button medium" id="homeButton" 
+                            onClick={() => modalStore.openModal(<LoginForm />)} style={{paddingLeft:"2.2em", paddingRight:"2.2em", marginTop:'2em'}}>
                                 Login!
                             </button>
-                            <button className="ui button medium" id="homeButton" onClick={() => modalStore.openModal(<RegisterForm />)}>
+                            <button className="ui button medium" id="homeButton" 
+                            onClick={() => modalStore.openModal(<RegisterForm />)} style={{ marginTop:"2em" }}>
                                 Register!
                             </button>
                         </>

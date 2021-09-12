@@ -4,6 +4,11 @@ export interface Profile {
     username: string;
     displayName: string;
     image?: string;
+    age?: string;
+    gender?: string;
+    carModel?: string;
+    carNumber?: string;
+    phoneNumber?: string;
     followersCount: number;
     followingCount: number;
     following: boolean;
@@ -27,8 +32,8 @@ export interface Photo {
 
 export interface UserRide {
     id: string;
-    Departure: string;
-    Destination: string;
+    departure: string;
+    destination: string;
     departureDate: Date;
     returnDate: Date;
 }

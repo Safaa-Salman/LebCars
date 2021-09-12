@@ -17,9 +17,9 @@ body {
   width: 100%;
 }
 
-/* .ui.header {
-  color: #2b2d2f;
-} */
+.ui.header {
+  color: #008080;
+}
 
 .ui.statistic>.value, .ui.statistics .statistic>.value, 
 .ui.statistic>.label, .ui.statistics .statistic>.label {

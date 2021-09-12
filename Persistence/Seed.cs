@@ -18,22 +18,46 @@ namespace Persistence
                 {
                     new AppUser
                     {
-                        DisplayName = "Bob",
-                        UserName = "bob",
-                        Email = "bob@test.com"
+                        DisplayName = "Tony Stark",
+                        UserName = "tony",
+                        Email = "tony@test.com"
                     },
                     new AppUser
                     {
-                        DisplayName = "Jane",
-                        UserName = "jane",
-                        Email = "jane@test.com"
+                        DisplayName = "Steve Rogers",
+                        UserName = "steve",
+                        Email = "steve@test.com"
                     },
                     new AppUser
                     {
-                        DisplayName = "Tom",
-                        UserName = "tom",
-                        Email = "tom@test.com"
+                        DisplayName = "Peter Parker",
+                        UserName = "peter",
+                        Email = "peter@test.com"
                     },
+                    new AppUser
+                    {
+                        DisplayName = "Nathalie Romanoff",
+                        UserName = "nathalie",
+                        Email = "nathalie@test.com"
+                    },
+                    new AppUser
+                    {
+                        DisplayName = "Wanda Maximoff",
+                        UserName = "wanda",
+                        Email = "wanda@test.com"
+                    },
+                    new AppUser
+                    {
+                        DisplayName = "Pepper Potts",
+                        UserName = "pepper",
+                        Email = "pepper@test.com"
+                    },
+                    new AppUser
+                    {
+                        DisplayName = "Bucky Barnes",
+                        UserName = "bucky",
+                        Email = "bucky@test.com"
+                    }
                 };
 
                 foreach (var user in users)
@@ -166,6 +190,12 @@ namespace Persistence
                                 AppUser = users[1],
                                 IsDriver = false
                             },
+                            new RideAttendee
+                            {
+                                AppUser = users[3],
+                                IsDriver = false
+                            }
+                            
                         }
                     },
                     new Ride
@@ -218,6 +248,16 @@ namespace Persistence
                                 AppUser = users[2],
                                 IsDriver = false
                             },
+                            new RideAttendee
+                            {
+                                AppUser = users[3],
+                                IsDriver = false
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[4],
+                                IsDriver = false
+                            }
                         }
                     },
                     new Ride
@@ -244,6 +284,11 @@ namespace Persistence
                                 AppUser = users[0],
                                 IsDriver = false                            
                             },
+                            new RideAttendee
+                            {
+                                AppUser = users[6],
+                                IsDriver = false
+                            }
                         }
                     },
                     new Ride
@@ -317,6 +362,16 @@ namespace Persistence
                                 AppUser = users[1],
                                 IsDriver = false                            
                             },
+                            new RideAttendee
+                            {
+                                AppUser = users[5],
+                                IsDriver = false
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[4],
+                                IsDriver = false
+                            },
                             
                         }
                     },
@@ -343,6 +398,21 @@ namespace Persistence
                             {
                                 AppUser = users[1],
                                 IsDriver = false                            
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[3],
+                                IsDriver = false
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[4],
+                                IsDriver = false
+                            },
+                            new RideAttendee
+                            {
+                                AppUser = users[5],
+                                IsDriver = false
                             },
                         }
                     },

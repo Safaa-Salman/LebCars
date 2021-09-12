@@ -7,8 +7,8 @@ import { format } from 'date-fns';
 import { useStore } from "../../app/stores/store";
 
 const panes = [
-    { menuItem: 'Future Events', pane: { key: 'future' } },
-    { menuItem: 'Past Events', pane: { key: 'past' } },
+    { menuItem: 'Future Rides', pane: { key: 'future' } },
+    { menuItem: 'Past Rides', pane: { key: 'past' } },
     { menuItem: 'Hosting', pane: { key: 'hosting' } }
 ];
 
@@ -54,15 +54,17 @@ export default observer(function ProfileRides() {
                                     style={{ minHeight: 100, objectFit: 'cover' }}
                                 />
                                 <Card.Content>
-                                    <Card.Header textAlign='center'>{ride.Departure}</Card.Header>
-                                    <Card.Header textAlign='center'>{ride.Destination}</Card.Header>
                                     <Card.Meta textAlign='center'>
-                                        <div>{format(new Date(ride.departureDate), 'do LLL')}</div>
-                                        <div>{format(new Date(ride.departureDate), 'h:mm a')}</div>
+                                        <div>{ride.departure}</div>
                                     </Card.Meta>
                                     <Card.Meta textAlign='center'>
-                                        <div>{format(new Date(ride.returnDate), 'do LLL')}</div>
-                                        <div>{format(new Date(ride.returnDate), 'h:mm a')}</div>
+                                        <div>{ride.destination}</div>
+                                    </Card.Meta>
+                                    <Card.Meta textAlign='center'>
+                                        <div>{format(new Date(ride.departureDate), 'do LLL')} {format(new Date(ride.departureDate), 'h:mm a')}</div>
+                                    </Card.Meta>
+                                    <Card.Meta textAlign='center'>
+                                        <div>{format(new Date(ride.returnDate), 'do LLL')} {format(new Date(ride.returnDate), 'h:mm a')}</div>
                                     </Card.Meta>
                                 </Card.Content>
                             </Card>

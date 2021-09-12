@@ -66,7 +66,7 @@ export default observer(function RideDetailedHeader({ ride }: Props) {
                             to={`/manage/${ride.id}`}
                             color='orange'
                             floated='right'>
-                            Manage Event
+                            Manage Ride
                         </Button>
                     </>
                 ) : ride.isGoing ? (

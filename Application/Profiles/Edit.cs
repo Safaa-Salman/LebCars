@@ -15,6 +15,11 @@ namespace Application.Profiles
         {
             public string DisplayName { get; set; }
             public string Bio { get; set; }
+            public string Age { get; set; }
+            public string Gender { get; set; }
+            public string CarModel{ get; set; }
+            public string CarNumber { get; set; }
+            public string PhoneNumber { get; set; }
         }
         public class CommandValidator : AbstractValidator<Command>
         {
@@ -39,6 +44,11 @@ namespace Application.Profiles
 
                 user.Bio = request.Bio ?? user.Bio;
                 user.DisplayName = request.DisplayName ?? user.DisplayName;
+                user.Age = request.Age ?? user.Age;
+                user.Gender = request.Gender ?? user.Gender;
+                user.CarModel = request.CarModel ?? user.CarModel;
+                user.CarNumber = request.CarNumber ?? user.CarNumber;
+                user.PhoneNumber = request.PhoneNumber ?? user.PhoneNumber;
                 _context.Entry(user).State = EntityState.Modified;
                 
                 var success = await _context.SaveChangesAsync() > 0;
