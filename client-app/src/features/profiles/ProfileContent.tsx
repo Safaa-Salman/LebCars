@@ -7,6 +7,7 @@ import ProfileAbout from './ProfileAbout';
 import ProfileRides from './ProfileRides';
 import ProfileFollowings from './ProfileFollowings';
 import ProfilePhotos from './ProfilePhotos';
+import ProfileRatings from './ProfileRatings';
 
 interface Props {
     profile : Profile;
@@ -21,6 +22,7 @@ export default observer(function ProfileContent({profile}: Props) {
         {menuItem: 'Rides', render: () => <ProfileRides />},
         {menuItem: 'Followers', render: () => <ProfileFollowings />},
         {menuItem: 'Following', render: () => <ProfileFollowings />},
+        {menuItem: 'Rating', render: () => <ProfileRatings />},
     ]
 
     return (

@@ -7,6 +7,7 @@ import { Form, Label, Select } from 'semantic-ui-react';
    name: string;
    options: any;
    label?: string;
+   default?: boolean;
  }
 
  export default function MySelectInput(props: Props) {
@@ -15,6 +16,7 @@ import { Form, Label, Select } from 'semantic-ui-react';
         <Form.Field error={meta.touched && !!meta.error}>
             <label>{props.label}</label>
             <Select
+                default={props.default}
                 clearable
                 options={props.options}
                 value={field.value || null}

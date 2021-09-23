@@ -8,12 +8,7 @@ export default observer(function RideFilters() {
     const { rideStore: { predicate, setPredicate } } = useStore();
     return (
         <>
-            <div className="ui action input" style={{ width: '100%', marginTop: 25 }}>
-                <input type="text" placeholder="Search Rides..."/>
-                <button className ="ui icon button teal">
-                <i className="search icon"></i>
-                </button>
-            </div>
+            
             <Menu vertical size='large' color="teal" style={{ width: '100%', marginTop: 25 }}>
                 <Header icon='filter' attached color='teal' content='Filters' />
 

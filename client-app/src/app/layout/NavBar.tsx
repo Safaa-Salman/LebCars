@@ -15,7 +15,7 @@ export default observer(function NavBar() {
                 </Menu.Item>
 
                 <Menu.Item as={NavLink} to='/rides' name='Rides' />
-                {/* <Menu.Item as={NavLink} to='/errors' name='errors' /> */}
+                <Menu.Item as={NavLink} to='/errors' name='errors' />
                 <Menu.Item >
                     {/* <Button className='ui inverted button' as={NavLink} to='/createRide' content='Create Ride' /> */}
                     <Button id="homeButton" as={NavLink} to='/createRide' content='Create Ride' />

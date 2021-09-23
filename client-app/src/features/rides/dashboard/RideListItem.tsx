@@ -48,6 +48,9 @@ export default function RideListItem({ ride }: Props) {
             </Segment>
             <Segment>
                 <ItemDescription>
+                    Car Model: {ride.driver?.carModel}
+                </ItemDescription>
+                <ItemDescription>
                     Departure date: {format(ride.departureDate!, 'dd MMM yyyy h:mm aa')} <br />
                     Return date: {format(new Date(ride.returnDate!), 'do LLL')} {format(new Date(ride.returnDate!), 'h:mm a')}
                 </ItemDescription>

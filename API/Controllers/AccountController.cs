@@ -73,6 +73,8 @@ namespace API.Controllers
 
             if (result.Succeeded)
             {
+                // var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                // var confirmationLink = Url.Action("ConfirmEmail", "Account", new {userId = user.Id, token = token}, Request.Scheme);
                 return CreateUserObject(user);
             }
 

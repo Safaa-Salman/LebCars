@@ -3,6 +3,7 @@ using Application.Rides;
 using Application.Comments;
 using Application.Profiles;
 using Domain;
+using Application.Ratings;
 
 namespace Application.Core
 {
@@ -39,6 +40,13 @@ namespace Application.Core
                 .ForMember(d => d.DisplayName, o => o.MapFrom(s => s.Author.DisplayName))
                 .ForMember(d => d.Username, o => o.MapFrom(s => s.Author.UserName))
                 .ForMember(d => d.Image, o => o.MapFrom(s => s.Author.Photos.FirstOrDefault(x => x.IsMain).Url));
+            CreateMap<Rating, RatingDto>()
+                .ForMember(d => d.Feedback, o => o.MapFrom(s => s.Feedback))
+                .ForMember(d => d.RatingValue, o => o.MapFrom(s => s.RatingValue))
+                .ForMember(d => d.ObserverDisplayName, o => o.MapFrom(s => s.Observer.DisplayName))
+                .ForMember(d => d.ObserverUsername, o => o.MapFrom(s => s.Observer.UserName))
+                .ForMember(d => d.TargetDisplayName, o => o.MapFrom(s => s.Target.DisplayName))
+                .ForMember(d => d.TargetUsername, o => o.MapFrom(s => s.Target.UserName));
             CreateMap<RideAttendee, UserRideDto>()
                 .ForMember(d => d.Id, o => o.MapFrom(s => s.Ride.Id))
                 .ForMember(d => d.Departure, o => o.MapFrom(s => s.Ride.Departure))

@@ -38,7 +38,7 @@ export default observer(function RideDetailedHeader({ ride }: Props) {
                             <Item.Content>
                                 <Header
                                     size='huge'
-                                    content={`Departure: ${ride.departure} /n Destination: ${ride.destination}`}
+                                    content={`Departure: ${ride.departure} .... Destination: ${ride.destination}`}
                                     style={{ color: 'white' }}
                                 />
                                 <p>{format(ride.departureDate!, 'dd MMM yyyy')}</p>

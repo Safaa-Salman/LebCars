@@ -4,6 +4,8 @@ import React from 'react'
 import { Segment, Grid, Icon } from 'semantic-ui-react'
 import { Ride } from "../../../app/models/ride";
 import { MdSmokingRooms, MdChildFriendly, MdPets } from "react-icons/md";
+import { FaCar } from "react-icons/fa";
+import { AiOutlineFieldNumber } from "react-icons/ai";
 
 interface Props {
     ride: Ride
@@ -17,7 +19,7 @@ export default observer(function RideDetailedInfo({ ride }: Props) {
                     <Grid.Column width={1}>
                         <Icon size='large' color='teal' name='info' />
                     </Grid.Column>
-                    <Grid.Column width={15}>
+                    <Grid.Column width={11}>
                         <p>{ride.description}</p>
                     </Grid.Column>
                 </Grid>
@@ -27,7 +29,7 @@ export default observer(function RideDetailedInfo({ ride }: Props) {
                     <Grid.Column width={1}>
                         <Icon name='calendar' size='large' color='teal' />
                     </Grid.Column>
-                    <Grid.Column width={15}>
+                    <Grid.Column width={11}>
                         <span>
                           Departure: {format(ride.departureDate!, 'dd MMM yyyy h:mm aa')} <br /> Return: {format(ride.departureDate!, 'dd MMM yyyy h:mm aa')}
                         </span>
@@ -61,6 +63,30 @@ export default observer(function RideDetailedInfo({ ride }: Props) {
                     </Grid.Column>
                     <Grid.Column width={11}>
                         <span>Number Of Passengers:{ride.passengerNumber}</span>
+                    </Grid.Column>
+                </Grid>
+            </Segment>
+            <Segment attached>
+                <Grid verticalAlign='middle'>
+                    <Grid.Column width={1}>
+                        <FaCar size='large' color='teal'/>
+                    </Grid.Column>
+                    <Grid.Column width={11}>
+                        <span>
+                          Car Model: {ride.driver?.carModel}
+                        </span>
+                    </Grid.Column>
+                </Grid>
+            </Segment>
+            <Segment attached>
+                <Grid verticalAlign='middle'>
+                    <Grid.Column width={1}>
+                        <AiOutlineFieldNumber size='large' color='teal' />
+                    </Grid.Column>
+                    <Grid.Column width={11}>
+                        <span>
+                          Car Number: {ride.driver?.carNumber}
+                        </span>
                     </Grid.Column>
                 </Grid>
             </Segment>

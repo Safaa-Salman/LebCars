@@ -6,6 +6,8 @@ import { store } from '../stores/store';
 import { User, UserFormValues } from '../models/user';
 import { Photo, Profile, UserRide } from '../models/profile';
 import { PaginatedResult } from '../models/pagination';
+import { GivenRating } from '../models/Rating';
+
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -104,7 +106,9 @@ const Profiles ={
     listFollowings: (username: string, predicate: string) =>
         requests.get<Profile[]>(`/follow/${username}?predicate=${predicate}`),
     listRides: (username: string, predicate: string) =>
-        requests.get<UserRide[]>(`/profiles/${username}/rides?predicate=${predicate}`)
+        requests.get<UserRide[]>(`/profiles/${username}/rides?predicate=${predicate}`),
+    listRatings: (username: string, predicate: string) =>
+        requests.get<GivenRating[]>(`/profiles/${username}/rating?predicate=${predicate}`)
     
 }
 

@@ -30,9 +30,9 @@ export default observer(function RideForm() {
         passengerNumber: Yup.string().required(),
         cost: Yup.string().required(),
         description: Yup.string().required(),
-        children: Yup.boolean().required(),
-        animals: Yup.boolean().required(),
-        smoking: Yup.boolean().required()
+        children: Yup.string().required(),
+        animals: Yup.string().required(),
+        smoking: Yup.string().required()
     })
 
     useEffect(() => {
