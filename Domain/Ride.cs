@@ -13,9 +13,11 @@ namespace Domain
         public string passengerNumber { get; set; }
         public string Cost { get; set; }
         public string Description { get; set; }
-        public bool Children { get; set; }
-        public bool Animals { get; set; }
-        public bool Smoking { get; set; }
+        public string Children { get; set; }
+        public string Animals { get; set; }
+        public string Smoking { get; set; }
+        public string Baggage { get; set; }
+        public string BaggageCost { get; set; }
         public bool IsCancelled { get; set; }
         public ICollection<RideAttendee> Attendees {get; set;} = new List<RideAttendee>();
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();

@@ -1,6 +1,6 @@
-export const prefrenceOptions = [
-    {text: 'Yes', value: true},
-    {text: 'No', value: false}
+export const preferenceOptions = [
+    {text: 'Yes', value: "true"},
+    {text: 'No', value: "false"}
 ]
 
 export const genderOptions = [

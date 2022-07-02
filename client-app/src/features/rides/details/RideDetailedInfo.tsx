@@ -4,7 +4,7 @@ import React from 'react'
 import { Segment, Grid, Icon } from 'semantic-ui-react'
 import { Ride } from "../../../app/models/ride";
 import { MdSmokingRooms, MdChildFriendly, MdPets } from "react-icons/md";
-import { FaCar } from "react-icons/fa";
+import { FaCar, FaSuitcase } from "react-icons/fa";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 
 interface Props {
@@ -93,10 +93,36 @@ export default observer(function RideDetailedInfo({ ride }: Props) {
             <Segment attached>
                 <Grid verticalAlign='middle'>
                     <Grid.Column width={1}>
+                        <Icon name='dollar sign' size='large' color='teal' />
+                    </Grid.Column>
+                    <Grid.Column width={11}>
+                        <span>
+                          Cost Per Baggage: {ride.baggageCost}
+                        </span>
+                    </Grid.Column>
+                </Grid>
+            </Segment>
+            <Segment attached>
+                <Grid verticalAlign='middle'>
+                    <Grid.Column width={1}>
+                        <FaSuitcase size='large' color='teal'/>
+                    </Grid.Column>
+                    <Grid.Column width={11}>
+                    {(ride.baggage === 'true') ? (
+                        <span>Baggages are allowed</span>
+                    ) : (
+                        <span>Baggages are not allowed</span>
+                    )}
+                    </Grid.Column>
+                </Grid>
+            </Segment>
+            <Segment attached>
+                <Grid verticalAlign='middle'>
+                    <Grid.Column width={1}>
                         <MdSmokingRooms size='large' color='teal'/>
                     </Grid.Column>
                     <Grid.Column width={11}>
-                    {ride.smoking ? (
+                    {(ride.smoking === 'true') ? (
                         <span>Smoking is allowed</span>
                     ) : (
                         <span>Smoking is not allowed</span>
@@ -110,7 +136,7 @@ export default observer(function RideDetailedInfo({ ride }: Props) {
                         <MdChildFriendly size='large' color='teal'/>
                     </Grid.Column>
                     <Grid.Column width={11}>
-                    {ride.children ? (
+                    {(ride.children === 'true') ? (
                         <span>Children are allowed</span>
                     ) : (
                         <span>Children are not allowed</span>
@@ -124,7 +150,7 @@ export default observer(function RideDetailedInfo({ ride }: Props) {
                         <MdPets size='large' color='teal'/>
                     </Grid.Column>
                     <Grid.Column width={11}>
-                    {ride.animals ? (
+                    {(ride.animals === 'true') ? (
                         <span>Pets are allowed</span>
                     ) : (
                         <span>Pets are not allowed</span>

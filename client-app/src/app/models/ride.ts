@@ -9,9 +9,11 @@ export interface Ride {
     passengerNumber: string;
     cost: string;
     description: string;
-    children: boolean;
-    animals: boolean;
-    smoking: boolean;
+    children: string;
+    animals: string;
+    smoking: string;
+    baggage: string;
+    baggageCost: string;
     driverUsername: string;
     isCancelled: boolean;
     isGoing:boolean;
@@ -35,9 +37,11 @@ export class RideFormValues {
   passengerNumber: string = '';
   cost: string = '';
   description: string = '';
-  children: boolean = false;
-  smoking: boolean = false;
-  animals: boolean = false;
+  children: string = '';
+  smoking: string = '';
+  animals: string = '';
+  baggage: string = '';
+  baggageCost: string = '';
 
   constructor(ride?: RideFormValues) {
     if (ride) {
@@ -52,6 +56,8 @@ export class RideFormValues {
       this.children = ride.children;
       this.smoking = ride.smoking;
       this.animals = ride.animals;
+      this.baggage = ride.baggage;
+      this.baggageCost = ride.baggageCost;
     }
   }
 }

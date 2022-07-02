@@ -9,7 +9,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
-import { prefrenceOptions } from '../../../app/common/options/prefrenceOptions';
+import { preferenceOptions } from '../../../app/common/options/preferenceOptions';
 import MySelectInput from '../../../app/common/form/MySelectInput';
 import MyDateInput from '../../../app/common/form/MyDateInput';
 import { RideFormValues } from '../../../app/models/ride';
@@ -32,7 +32,9 @@ export default observer(function RideForm() {
         description: Yup.string().required(),
         children: Yup.string().required(),
         animals: Yup.string().required(),
-        smoking: Yup.string().required()
+        smoking: Yup.string().required(),
+        baggage: Yup.string().required(),
+        baggageCost: Yup.string().required(),
     })
 
     useEffect(() => {
@@ -85,9 +87,12 @@ export default observer(function RideForm() {
                             <MyTextInput placeholder='Cost'  name='cost' icon='dollar sign icon' />
                             <MyTextArea rows={3} placeholder='Description'  name='description'  />
                             <Header content='Preferences' sub color='teal' />
-                            <MySelectInput options={prefrenceOptions} placeholder='Are Children Allowed?'  name='children'  />
-                            <MySelectInput options={prefrenceOptions} placeholder='Is Smoking Allowed?'  name='smoking'  />
-                            <MySelectInput options={prefrenceOptions} placeholder='Are Pets Allowed?'  name='animals'  />
+                            <MySelectInput options={preferenceOptions} placeholder='Are Children Allowed?'  name='children'  />
+                            <MySelectInput options={preferenceOptions} placeholder='Is Smoking Allowed?'  name='smoking'  />
+                            <MySelectInput options={preferenceOptions} placeholder='Are Pets Allowed?'  name='animals'  />
+                            <MySelectInput options={preferenceOptions} placeholder='Are Baggage Allowed?'  name='baggage'  />
+                            <MyTextInput placeholder='Cost per Baggage'  name='baggageCost' icon='users icon'  />
+
                             <Button 
                                 disabled={isSubmitting || !dirty || !isValid}
                                 loading={isSubmitting} floated='right' 

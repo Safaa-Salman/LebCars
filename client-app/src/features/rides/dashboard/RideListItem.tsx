@@ -58,7 +58,7 @@ export default function RideListItem({ ride }: Props) {
                     Cost: {ride.cost}
                 </ItemDescription>
                 <ItemDescription>
-                    {(ride.children) ? (
+                    {(ride.children === 'true') ? (
                         <Label color='green' >
                             Children allowed
                         </Label>
@@ -67,7 +67,7 @@ export default function RideListItem({ ride }: Props) {
                             Children not allowed
                         </Label>
                     )}
-                    {(ride.smoking) ? (
+                    {(ride.smoking === 'true') ? (
                         <Label color='green' >
                             Smoking allowed
                         </Label>
@@ -76,13 +76,22 @@ export default function RideListItem({ ride }: Props) {
                             Smoking not allowed
                         </Label>
                     )}
-                    {(ride.animals) ? (
+                    {(ride.animals === 'true') ? (
                         <Label color='green' >
                             Pets allowed
                         </Label>
                     ) : (
                         <Label color='red' >
                             Pets not allowed
+                        </Label>
+                    )}
+                    {(ride.baggage === 'true') ? (
+                        <Label color='green' >
+                            Baggage allowed
+                        </Label>
+                    ) : (
+                        <Label color='red' >
+                            Baggages not allowed
                         </Label>
                     )}
                 </ItemDescription>

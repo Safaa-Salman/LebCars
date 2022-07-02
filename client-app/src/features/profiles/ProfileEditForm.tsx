@@ -6,7 +6,7 @@ import MyTextInput from "../../app/common/form/MyTextInput";
 import { useStore } from "../../app/stores/store";
 import * as Yup from 'yup';
 import MySelectInput from "../../app/common/form/MySelectInput";
-import { genderOptions } from "../../app/common/options/prefrenceOptions";
+import { genderOptions } from "../../app/common/options/preferenceOptions";
 interface Props {
     setEditMode: (editMode: boolean) => void;
 }

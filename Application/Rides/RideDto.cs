@@ -14,9 +14,11 @@ namespace Application.Rides
         public string passengerNumber { get; set; }
         public string Cost { get; set; }
         public string Description { get; set; }
-        public bool Children { get; set; } = false;
-        public bool Animals { get; set; } = false;
-        public bool Smoking { get; set; } = false;
+        public string Baggage { get; set; }
+        public string BaggageCost { get; set; }
+        public string Children { get; set; } 
+        public string Animals { get; set; } 
+        public string Smoking { get; set; } 
         public string DriverUsername { get; set; }
         public bool IsCancelled { get; set; }
         public ICollection<AttendeeDto> Attendees { get; set; }
